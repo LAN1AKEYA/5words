@@ -1,14 +1,21 @@
+import { useState } from 'react';
 import styles from './Grid.module.css';
 import Cell from './Cell/Cell';
 
 
 export default function Grid(props) {
+
+    const [consoleMessage, changeConsoleMessage] = useState('hello world');
+
+
     return (
         <>
         <div style={{
             display: 'flex',
             justifyContent: 'center',
-            alignItems: 'center'
+            alignItems: 'center',
+            flexDirection: 'column',
+            gap: '10px'
         }}>
             <div id={styles.contain} style={{gap: `${(props.gap ? props.gap : 10)}px`}}>
                 {
@@ -19,6 +26,7 @@ export default function Grid(props) {
                     }</div>)
                 }
             </div>
+            <div id="console">{consoleMessage}</div>
         </div>
         </>
     )

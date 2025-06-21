@@ -1,29 +1,28 @@
 const allCodes = ['KeyQ','KeyW','KeyE','KeyR','KeyT','KeyY','KeyU','KeyI','KeyO','KeyP','BracketLeft','BracketRight','KeyA','KeyS','KeyD','KeyF','KeyG','KeyH','KeyJ','KeyK','KeyL','Semicolon','Quote','KeyZ','KeyX','KeyC','KeyV','KeyB','KeyN','KeyM','Comma','Period'];
-const allKeys = ["Й","Ц","У","К","Е","Н","Г","Ш","Щ","З","Х","Ъ","Ф","Ы","В","А","П","Р","О","Л","Д","Ж","Э","Я","Ч","С","М","И","Т","Ь","Б","Ю"]
+const allKeys = ["й","ц","у","к","е","н","г","ш","щ","з","х","ъ","ф","ы","в","а","п","р","о","л","д","ж","э","я","ч","с","м","и","т","ь","б","ю"]
 
 
-const wordsBank = ["ЧАЙ", "ДОМ", "ЖИР"];
+const wordsBank = ["чай", "дом", "жир"];
 const settedWord = wordsBank[0];
+const wordLength = 3;
 let compainWord = '';
 
 
-export const KeyboardHandle = (wordLength) => {
-    document.addEventListener('keydown', (event) => {
-        const settedLetter = allKeys[allCodes.indexOf(event.code)];
+export const KeyboardHandle = (type, code) => {
+    console.log(type, code)
+        const settedLetter = type == "phisical" ? allKeys[allCodes.indexOf(code)] : code;
         
         if (settedLetter != undefined) {
             compainWord += settedLetter;
             document.getElementById(`«r${compainWord.length - 1}»`).innerText = settedLetter;
         }
-        else if (event.code == 'Backspace') {
+        else if (code == 'Backspace') {
             compainWord = compainWord.slice(0, -1);
             /*
             for (let i = 0; i < wordLength; i++) {
                 document.getElementById(`«r${i}»`).innerText = allKeys[compainWord[i]] ? allKeys[compainWord[i]] : "";
             }*/
         }
-        console.log(settedWord);
-        console.log(compainWord);
         if (compainWord.length == wordLength) {
             if (wordsBank.includes(compainWord)) {
                 if (compainWord == settedWord) {
@@ -40,5 +39,4 @@ export const KeyboardHandle = (wordLength) => {
                 compainWord = '';
             }
         }
-    })
 }

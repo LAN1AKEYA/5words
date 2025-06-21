@@ -1,0 +1,29 @@
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.keyboardRow {
+    display: flex;
+    gap: 3px;
+}
+
+.keyboardRow:nth-child(2) {
+    margin-left: 24px;
+}
+
+.keyboardRow:nth-child(3) {
+    margin-left: 48px;
+}
+
+.keyButton:not(:last-child) {
+    width: 48px;
+}
+
+.keyboardLines {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}

@@ -4,6 +4,10 @@
     gap: 10px;
 }
 
+#contain * {
+    text-transform: uppercase;
+}
+
 .line {
     display: flex;
     justify-content: center;

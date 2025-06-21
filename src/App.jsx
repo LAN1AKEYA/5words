@@ -3,7 +3,9 @@ import Grid from './components/Grid/Grid'
 import Keyboard from './components/Keyboard/Keyboard'
 import { KeyboardHandle } from './engine/Engine';
 
-KeyboardHandle(3);
+//KeyboardHandle();
+
+document.addEventListener('keydown', (event) => KeyboardHandle("phisical", event.code))
 
 
 export default function App() {

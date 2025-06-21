@@ -4,4 +4,5 @@
   display: grid;
   grid-template-rows: 3fr 1fr;
   padding: 2em;
+  box-sizing: border-box;
 }
