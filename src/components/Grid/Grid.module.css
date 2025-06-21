@@ -1,0 +1,11 @@
+#contain {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.line {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}

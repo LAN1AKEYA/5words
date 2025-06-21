@@ -1,0 +1,18 @@
+.cell {
+    width: 100px;
+    height: 100px;
+    border: 3px solid #f6e820;
+    border-radius: 10px;
+    font-family: "SourceCodePro";
+    font-weight: 900;
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+@font-face {
+    font-family: "SourceCodePro";
+    src: url('/public/SourceCodePro-VariableFont_wght.ttf');
+}
