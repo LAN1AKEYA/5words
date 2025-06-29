@@ -1,32 +1,37 @@
-import { useState } from 'react';
+import { Component, useState } from 'react';
 import styles from './Grid.module.css';
 import Cell from './Cell/Cell';
+import Console from '../../engine/Console';
 
 
 export default function Grid(props) {
 
-    const [consoleMessage, changeConsoleMessage] = useState('hello world');
 
 
     return (
         <>
-        <div style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'column',
-            gap: '10px'
-        }}>
-            <div id={styles.contain} style={{gap: `${(props.gap ? props.gap : 10)}px`}}>
+        <div id={styles.contain}>
+            <div id={styles.box} style={{gap: `${(props.gap ? props.gap : 10)}px`}}>
+
+          
+
                 {
-                    Array(Number(props.height)).fill(0).map(() => <div className={styles.line} style={{
-                        gap: `${(props.gap ? props.gap : 10)}px`
-                    }}>{
-                        Array(Number(props.width)).fill(0).map( (key) => <Cell key={key}/>)
-                    }</div>)
+
+                    props.GridBank.map((item, key) => 
+                        <div key={key} className={styles.line} style={{
+                            gap: `${(props.gap ? props.gap : 10)}px`
+                        }}>
+                            {
+                                item.cells.map((letter, key) => <Cell key={key} insertedLetter={letter.letter} state={letter.status}/>) //state - это состояние ячейки (common - стиль встречающейся буквы, guessed - стиль отгаданной буквы)
+                            }
+
+                        </div>
+                    
+                        
+                    )
                 }
             </div>
-            <div id="console">{consoleMessage}</div>
+                <Console message={props.consoleText}/>
         </div>
         </>
     )

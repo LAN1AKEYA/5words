@@ -12,6 +12,18 @@
     text-transform: uppercase;
 }
 
+.common {
+    background-color: #fff;
+    color: #242424;
+    border-color: #fff;
+}
+
+.guessed {
+    background-color: #f6e820;
+    color: #242424;
+    border-color: #f6e820;
+}
+
 @font-face {
     font-family: "SourceCodePro";
     src: url('/public/SourceCodePro-VariableFont_wght.ttf');

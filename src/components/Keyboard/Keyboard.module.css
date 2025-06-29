@@ -20,6 +20,30 @@
 
 .keyButton:not(:last-child) {
     width: 48px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.keyCommon {
+    background-color: #ededed;
+    color: #242424;
+    border-color: #ededed;
+}
+
+.keyGuessed {
+    background-color: #f6e820;
+    color: #242424;
+    border-color: #f6e820;
+}
+
+.keyUnused {
+    /*
+    background-color: #8c8c8c;
+    color: #ededed;
+    */
+    opacity: 0.7;
+    filter: blur(1px);
+
 }
 
 .keyboardLines {
